@@ -1,3 +1,5 @@
+// source Java documentation
+
 public class SimpleThreads {
 
     // Display a message, preceded by
@@ -32,11 +34,19 @@ public class SimpleThreads {
                 threadMessage("I wasn't done!");
             }
         }
+        
+    	public void testMethod(){
+    		synchronized (this) {
+    			System.out.println("in synchronized block");
+    		}
     }
 
     public static void main(String args[])
         throws InterruptedException {
 
+		synchronized (SimpleThreads.class) {
+			System.out.println("synchronized block in static method");			
+		}
         // Delay, in milliseconds before
         // we interrupt MessageLoop
         // thread (default one hour).
